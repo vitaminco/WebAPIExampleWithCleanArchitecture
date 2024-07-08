@@ -1,8 +1,8 @@
 ﻿//using tạo db
 using Application.Configurations;
+using Application.Handlers.ExampleHandler.Queries;
+using Application.Handlers.SampleHandler.Queries;
 using Infrastructure.DependencyInjection;
-using Infrastructure.Handlers.ExampleHandler.Queries;
-using Infrastructure.Handlers.SampleHandler.Commands;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +17,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.InFrastrutureServics(builder.Configuration);
 //Sử dụng automapper
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+
 //Sử dụng MediatR 
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(typeof(GetAllExampleHandler).Assembly);
-    cfg.RegisterServicesFromAssembly(typeof(CreateSampleHandler).Assembly);
+    cfg.RegisterServicesFromAssembly(typeof(GetAllSampleHandler).Assembly);
 });
 
 var app = builder.Build();

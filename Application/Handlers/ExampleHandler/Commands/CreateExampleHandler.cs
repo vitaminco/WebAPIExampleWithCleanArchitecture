@@ -1,25 +1,25 @@
 ﻿
 
 using Application.DTOs.ExampleDTOs;
+using Application.DTOs.SampleDTOs;
 using Application.Features.ExampleFeatures.Commands;
+using Application.Interface;
 using AutoMapper;
 using Domain.Entities;
-using Infrastructure.Data;
 using MediatR;
 
-namespace Infrastructure.Handlers.ExampleHandler.Commands
+namespace Application.Handlers.ExampleHandler.Commands
 {
     public class CreateExampleHandler : IRequestHandler<CreateExampleCommand, ExampleResponse>
     {
-        private readonly AppDbContext appDbContext;
+        private readonly IAppDbContext appDbContext;
         private readonly IMapper mapper;
 
-        public CreateExampleHandler(AppDbContext appDbContext, IMapper mapper)
+        public CreateExampleHandler(IAppDbContext appDbContext, IMapper mapper)
         {
             this.appDbContext = appDbContext;
             this.mapper = mapper;
         }
-
         public async Task<ExampleResponse> Handle(CreateExampleCommand request, CancellationToken cancellationToken)
         {
             try
@@ -27,12 +27,14 @@ namespace Infrastructure.Handlers.ExampleHandler.Commands
                 var dataAdd = mapper.Map<AppExample>(request.CreateExampleRequest);
                 if (dataAdd is null)
                 {
-                    return new ExampleResponse(true, "Thêm không thành công, vui lòng thêm dử liệu");
+                    return new ExampleResponse(false, "Chưa nhập dữ liệu");
                 }
+
                 dataAdd.CreatedAt = DateTime.Now;
+
                 // tạo & lưu
-                await appDbContext.AddAsync(dataAdd);
-                await appDbContext.SaveChangesAsync();
+                await appDbContext.Examples.AddAsync(dataAdd);
+                await appDbContext.SaveChangesAsync(cancellationToken);
                 /*  //thêm
                   appDbContext.Examples.Add(mapper.Map<AppExample>(request.CreateExampleRequest));
 
@@ -41,8 +43,11 @@ namespace Infrastructure.Handlers.ExampleHandler.Commands
             }
             catch (Exception ex)
             {
+                // Xử lý lỗi
                 return new ExampleResponse(false, "Lỗi");
             }
         }
+
     }
 }
+

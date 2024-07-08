@@ -1,16 +1,25 @@
 ﻿
+using Application.Interface;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
-    public class AppDbContext : DbContext
+    //Triễn khai interface IAppDbContext
+    public class AppDbContext : DbContext, IAppDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<AppExample> Examples { get; set; }
         public DbSet<AppSample> Samples { get; set; }
 
+        //Triễn khai interface IAppDbContext để lưu CRUD 
+        public Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
+        //Tạo các vadation
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Example

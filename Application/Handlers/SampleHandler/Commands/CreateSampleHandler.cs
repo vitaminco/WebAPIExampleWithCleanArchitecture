@@ -2,20 +2,20 @@
 
 using Application.DTOs.SampleDTOs;
 using Application.Features.SampleFeatures.Commands;
+using Application.Interface;
 using AutoMapper;
 using Domain.Entities;
-using Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Handlers.SampleHandler.Commands
+namespace Application.Handlers.SampleHandler.Commands
 {
     public class CreateSampleHandler : IRequestHandler<CreateSampleCommand, SampleResponse>
     {
-        private readonly AppDbContext appDbContext;
+        private readonly IAppDbContext appDbContext;
         private readonly IMapper mapper;
 
-        public CreateSampleHandler(AppDbContext appDbContext, IMapper mapper)
+        public CreateSampleHandler(IAppDbContext appDbContext, IMapper mapper)
         {
             this.appDbContext = appDbContext;
             this.mapper = mapper;
@@ -44,8 +44,8 @@ namespace Infrastructure.Handlers.SampleHandler.Commands
                 res.ExampleId = appExample.Id;
 
                 // Thêm và lưu dữ liệu
-                await appDbContext.AddAsync(res);
-                await appDbContext.SaveChangesAsync();
+                await appDbContext.Samples.AddAsync(res);
+                await appDbContext.SaveChangesAsync(cancellationToken);
 
                 return new SampleResponse(true, "Thêm dữ liệu thành công");
             }
@@ -55,7 +55,5 @@ namespace Infrastructure.Handlers.SampleHandler.Commands
                 return new SampleResponse(false, "Lỗi");
             }
         }
-
-
     }
 }

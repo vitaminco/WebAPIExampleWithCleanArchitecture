@@ -2,17 +2,16 @@
 
 using Application.DTOs.SampleDTOs;
 using Application.Features.SampleFeatures.Commands;
-using Domain.Entities;
-using Infrastructure.Data;
+using Application.Interface;
 using MediatR;
 
-namespace Infrastructure.Handlers.SampleHandler.Commands
+namespace Application.Handlers.SampleHandler.Commands
 {
     public class DeleteSampleHandler : IRequestHandler<DeleteSampleCommand, SampleResponse>
     {
-        private readonly AppDbContext appDbContext;
+        private readonly IAppDbContext appDbContext;
 
-        public DeleteSampleHandler(AppDbContext appDbContext)
+        public DeleteSampleHandler(IAppDbContext appDbContext)
         {
             this.appDbContext = appDbContext;
         }
@@ -27,7 +26,7 @@ namespace Infrastructure.Handlers.SampleHandler.Commands
                 }
 
                 appDbContext.Samples.Remove(find);
-                await appDbContext.SaveChangesAsync();
+                await appDbContext.SaveChangesAsync(cancellationToken);
                 return new SampleResponse(true, "Xóa thành công");
             }
             catch (Exception ex)

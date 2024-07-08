@@ -143,3 +143,4 @@ D:\ThucTap\WebAPIExampleWithClean\WebAPI\bin\Debug\net8.0\zh-Hant\Microsoft.Code
 D:\ThucTap\WebAPIExampleWithClean\WebAPI\bin\Debug\net8.0\AutoMapper.dll
 D:\ThucTap\WebAPIExampleWithClean\WebAPI\bin\Debug\net8.0\MediatR.dll
 D:\ThucTap\WebAPIExampleWithClean\WebAPI\bin\Debug\net8.0\MediatR.Contracts.dll
+D:\ThucTap\WebAPIExampleWithClean\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json

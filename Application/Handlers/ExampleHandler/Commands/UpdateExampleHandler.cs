@@ -2,18 +2,18 @@
 
 using Application.DTOs.ExampleDTOs;
 using Application.Features.ExampleFeatures.Commands;
+using Application.Interface;
 using AutoMapper;
-using Infrastructure.Data;
 using MediatR;
 
-namespace Infrastructure.Handlers.ExampleHandler.Commands
+namespace Application.Handlers.ExampleHandler.Commands
 {
     public class UpdateExampleHandler : IRequestHandler<UpdateExampleCommand, ExampleResponse>
     {
-        private readonly AppDbContext appDbContext;
+        private readonly IAppDbContext appDbContext;
         private readonly IMapper mapper;
 
-        public UpdateExampleHandler(AppDbContext appDbContext, IMapper mapper)
+        public UpdateExampleHandler(IAppDbContext appDbContext, IMapper mapper)
         {
             this.appDbContext = appDbContext;
             this.mapper = mapper;
@@ -31,10 +31,9 @@ namespace Infrastructure.Handlers.ExampleHandler.Commands
                 mapper.Map(request.UpdateExampleRequest, res);
                 res.UpdatedAt = DateTime.Now;
 
-                appDbContext.Update(res);
-                await appDbContext.SaveChangesAsync();
+                appDbContext.Examples.Update(res);
+                await appDbContext.SaveChangesAsync(cancellationToken);
                 return new ExampleResponse(true, "Cập nhập thành công");
-
             }
             catch (Exception ex)
             {

@@ -2,19 +2,19 @@
 
 using Application.DTOs.SampleDTOs;
 using Application.Features.SampleFeatures.Commands;
+using Application.Interface;
 using AutoMapper;
-using Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Handlers.SampleHandler.Commands
+namespace Application.Handlers.SampleHandler.Commands
 {
     public class UpdateSampleHandler : IRequestHandler<UpdateSampleCommand, SampleResponse>
     {
-        private readonly AppDbContext appDbContext;
+        private readonly IAppDbContext appDbContext;
         private readonly IMapper mapper;
 
-        public UpdateSampleHandler(AppDbContext appDbContext, IMapper mapper)
+        public UpdateSampleHandler(IAppDbContext appDbContext, IMapper mapper)
         {
             this.appDbContext = appDbContext;
             this.mapper = mapper;
@@ -41,9 +41,9 @@ namespace Infrastructure.Handlers.SampleHandler.Commands
                 find.ExampleId = appExample.Id;
                 find.UpdatedAt = DateTime.UtcNow;
                 //Cập nhật
-                appDbContext.Update(find);
+                appDbContext.Samples.Update(find);
                 //Lưu
-                await appDbContext.SaveChangesAsync();
+                await appDbContext.SaveChangesAsync(cancellationToken);
                 return new SampleResponse(true, "Cập nhật thành công");
             }
             catch (Exception ex)

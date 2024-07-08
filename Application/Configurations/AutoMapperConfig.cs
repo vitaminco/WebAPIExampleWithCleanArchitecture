@@ -12,7 +12,7 @@ namespace Application.Configurations
         {
             //Mapper Example
             CreateMap<CreateExampleRequest, AppExample>()
-                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) // bỏ qua về để cho cột đó null
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
             CreateMap<UpdateExampleRequest, AppExample>()

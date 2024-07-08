@@ -1,18 +1,18 @@
 ﻿
-using Application.DTOs.ExampleDTOs;
+
 using Application.Features.ExampleFeatures.Queries;
+using Application.Interface;
 using Domain.Entities;
-using Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Handlers.ExampleHandler.Queries
+namespace Application.Handlers.ExampleHandler.Queries
 {
     public class GetAllExampleHandler : IRequestHandler<GetAllExampleQuery, List<AppExample>>
     {
-        private readonly AppDbContext appDbContext;
+        private readonly IAppDbContext appDbContext;
 
-        public GetAllExampleHandler(AppDbContext appDbContext)
+        public GetAllExampleHandler(IAppDbContext appDbContext)
         {
             this.appDbContext = appDbContext;
         }
