@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ThucTap\\WebAPIExampleWithClean\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DEBA6B04-AAD1-4045-94D8-271CD5ED7ED0}|Infrastructure\\Infrastructure.csproj|d:\\thuctap\\webapiexamplewithclean\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEBA6B04-AAD1-4045-94D8-271CD5ED7ED0}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|d:\\thuctap\\webapiexamplewithclean\\application\\interface\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|solutionrelative:application\\interface\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|d:\\thuctap\\webapiexamplewithclean\\application\\handlers\\examplehandler\\commands\\deleteexamplehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|solutionrelative:application\\handlers\\examplehandler\\commands\\deleteexamplehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|d:\\thuctap\\webapiexamplewithclean\\application\\handlers\\examplehandler\\commands\\createexamplehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|solutionrelative:application\\handlers\\examplehandler\\commands\\createexamplehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|d:\\thuctap\\webapiexamplewithclean\\application\\handlers\\samplehandler\\commands\\createsamplehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AB25026-FB5F-4E9F-92C8-9726210B161F}|Application\\Application.csproj|solutionrelative:application\\handlers\\samplehandler\\commands\\createsamplehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,76 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DeleteExampleHandler.cs",
-              "DocumentMoniker": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Handlers\\ExampleHandler\\Commands\\DeleteExampleHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Handlers\\ExampleHandler\\Commands\\DeleteExampleHandler.cs",
-              "ToolTip": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Handlers\\ExampleHandler\\Commands\\DeleteExampleHandler.cs",
-              "RelativeToolTip": "Application\\Handlers\\ExampleHandler\\Commands\\DeleteExampleHandler.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAcwBwAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T09:00:12.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\ThucTap\\WebAPIExampleWithClean\\Infrastructure\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\AppDbContext.cs",
-              "ToolTip": "D:\\ThucTap\\WebAPIExampleWithClean\\Infrastructure\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T08:59:59.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IAppDbContext.cs",
-              "DocumentMoniker": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Interface\\IAppDbContext.cs",
-              "RelativeDocumentMoniker": "Application\\Interface\\IAppDbContext.cs",
-              "ToolTip": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Interface\\IAppDbContext.cs",
-              "RelativeToolTip": "Application\\Interface\\IAppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T08:58:36.873Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateSampleHandler.cs",
-              "DocumentMoniker": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Handlers\\SampleHandler\\Commands\\CreateSampleHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Handlers\\SampleHandler\\Commands\\CreateSampleHandler.cs",
-              "ToolTip": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Handlers\\SampleHandler\\Commands\\CreateSampleHandler.cs",
-              "RelativeToolTip": "Application\\Handlers\\SampleHandler\\Commands\\CreateSampleHandler.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwC8AAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T08:55:39.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateExampleHandler.cs",
-              "DocumentMoniker": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Handlers\\ExampleHandler\\Commands\\CreateExampleHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Handlers\\ExampleHandler\\Commands\\CreateExampleHandler.cs",
-              "ToolTip": "D:\\ThucTap\\WebAPIExampleWithClean\\Application\\Handlers\\ExampleHandler\\Commands\\CreateExampleHandler.cs",
-              "RelativeToolTip": "Application\\Handlers\\ExampleHandler\\Commands\\CreateExampleHandler.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAwCQAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T08:55:13.81Z",
-              "EditorCaption": ""
             }
           ]
         }
